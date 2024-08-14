@@ -12190,9 +12190,9 @@
       "title": "Snapdrop",
       "name": "Snapdrop",
       "note": "Portainer App Templates by <a href='https://www.technorabilia.com' target='_blank'>Technorabilia</a> based on data provided by <a href='https://www.linuxserver.io' target='_blank'>LinuxServer.io</a>.</p><p>Don't forget to create the volume directories on the host file system.</p><p>mkdir -p /volume1/docker/snapdrop/config</p>",
-      "description": "[Snapdrop](https://github.com/RobinLinus/snapdrop) A local file sharing in your browser. Inspired by Apple's Airdrop.",
+      "description": "[Snapdrop](https://github.com/snapdrop/snapdrop) A local file sharing in your browser. Inspired by Apple's Airdrop.",
       "platform": "linux",
-      "logo": "https://raw.githubusercontent.com/RobinLinus/snapdrop/master/client/images/logo_transparent_512x512.png",
+      "logo": "https://raw.githubusercontent.com/snapdrop/snapdrop/master/client/images/logo_transparent_512x512.png",
       "image": "linuxserver/snapdrop:latest",
       "env": [
         {
@@ -12991,6 +12991,12 @@
           "description": "Mongodb Database Name (stats DB is automatically suffixed with `_stat`). Only evaluated on first run."
         },
         {
+          "name": "MONGO_AUTHSOURCE",
+          "label": "MONGO_AUTHSOURCE",
+          "default": "admin",
+          "description": "Mongodb [authSource](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.authSource). For Atlas set to `admin`. Only evaluated on first run."
+        },
+        {
           "name": "MEM_LIMIT",
           "label": "MEM_LIMIT",
           "default": "1024",
@@ -13007,12 +13013,6 @@
           "label": "MONGO_TLS",
           "default": "",
           "description": "Mongodb enable [TLS](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.tls). Only evaluated on first run."
-        },
-        {
-          "name": "MONGO_AUTHSOURCE",
-          "label": "MONGO_AUTHSOURCE",
-          "default": "",
-          "description": "Mongodb [authSource](https://www.mongodb.com/docs/manual/reference/connection-string/#mongodb-urioption-urioption.authSource). For Atlas set to `admin`.Defaults to `MONGO_DBNAME`.Only evaluated on first run."
         }
       ],
       "ports": [
